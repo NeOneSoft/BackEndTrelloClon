@@ -34,6 +34,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
+    'tableros.apps.TablerosConfig',
+    'favoritos.apps.FavoritosConfig',
+    'miembros.apps.MiembrosConfig',
+    'listas.apps.ListasConfig',
+    'tarjetas.apps.TarjetasConfig',
+    'comentarios.apps.ComentariosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,7 +138,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
-
     #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
@@ -163,3 +168,14 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+SENDGRID_API_KEY = os.getenv('SEND_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'NeOneSoft'
+EMAIL_HOST_PASSWORD = 'Noshufuru1'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
