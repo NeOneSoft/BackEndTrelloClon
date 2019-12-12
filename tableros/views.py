@@ -38,7 +38,7 @@ class TableroViewSet(viewsets.ModelViewSet):
         if self.action == 'create':
             self.permission_classes = [IsAdminUser]
         return [permission() for permission in self.permission_classes]
-
+    """
     @action(detail=True, methods=['GET'])
     def favoritos(self, request, pk=None):
         tablero = self.get_object()
@@ -56,3 +56,4 @@ class TableroViewSet(viewsets.ModelViewSet):
         if not miembros:
             return Response(status=status.HTTP_404_NOT_FOUND, data={'message': 'Este tablero no contiene miembros'})
         return Response(status=status.HTTP_200_OK, data=serialized.data)
+    """

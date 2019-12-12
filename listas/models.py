@@ -10,4 +10,4 @@ class Lista(models.Model):
     posicion = models.IntegerField()
 
     def __str__(self):
-        self.models.nombre
+        return self.nombre

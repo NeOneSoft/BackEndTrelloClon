@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Lista
+from listas.models import Lista
 
 
 class ListaSerializer(serializers.ModelSerializer):
